@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const weatherRequest = require('./requests/weather.request');
+const port = process.env.PORT || 3000
 
 
 const app = express();
@@ -25,6 +26,6 @@ app.post('/', async (req, res) => {
     res.render('index', {weather, error});
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server has started on port 3000...')
 });
